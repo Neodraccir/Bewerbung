@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>Bewerbungsseite</title>
+    <link  rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <script type="x-shader/x-vertex" id="vertexshader">
+
+			varying vec2 vUv;
+
+			void main() {
+
+				vUv = uv;
+
+				gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+
+			}
+
+		</script>
+
+		<script type="x-shader/x-fragment" id="fragmentshader">
+
+			uniform sampler2D baseTexture;
+			uniform sampler2D bloomTexture;
+
+			varying vec2 vUv;
+
+			void main() {
+
+				gl_FragColor = ( texture2D( baseTexture, vUv ) + vec4( 1.0 ) * texture2D( bloomTexture, vUv ) );
+
+			}
+
+		</script>
+    <div id="canvasContainer">
+      <canvas id="bg"></canvas>
+    </div>
+    <main class="main">
+      <header>
+        <h1>Testseite</h1>
+        <p>Hello World!</p>
+      </header>
+      <p class="normalText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt optio
+        quisquam minima ipsam, soluta corrupti ullam beatae! Totam officiis
+        harum alias neque esse? Ipsam distinctio ullam, assumenda iusto
+        exercitationem excepturi!
+      </p>
+      <p class="normalText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt optio
+        quisquam minima ipsam, soluta corrupti ullam beatae! Totam officiis
+        harum alias neque esse? Ipsam distinctio ullam, assumenda iusto
+        exercitationem excepturi!
+      </p>
+      <p class="normalText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt optio
+        quisquam minima ipsam, soluta corrupti ullam beatae! Totam officiis
+        harum alias neque esse? Ipsam distinctio ullam, assumenda iusto
+        exercitationem excepturi!
+      </p>
+      <p class="normalText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt optio
+        quisquam minima ipsam, soluta corrupti ullam beatae! Totam officiis
+        harum alias neque esse? Ipsam distinctio ullam, assumenda iusto
+        exercitationem excepturi!
+      </p>
+      <p class="normalText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt optio
+        quisquam minima ipsam, soluta corrupti ullam beatae! Totam officiis
+        harum alias neque esse? Ipsam distinctio ullam, assumenda iusto
+        exercitationem excepturi!
+      </p>
+      <p class="normalText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt optio
+        quisquam minima ipsam, soluta corrupti ullam beatae! Totam officiis
+        harum alias neque esse? Ipsam distinctio ullam, assumenda iusto
+        exercitationem excepturi!
+      </p>
+      <p class="normalText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt optio
+        quisquam minima ipsam, soluta corrupti ullam beatae! Totam officiis
+        harum alias neque esse? Ipsam distinctio ullam, assumenda iusto
+        exercitationem excepturi!
+      </p>
+      <p class="normalText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt optio
+        quisquam minima ipsam, soluta corrupti ullam beatae! Totam officiis
+        harum alias neque esse? Ipsam distinctio ullam, assumenda iusto
+        exercitationem excepturi!
+      </p>
+      <p class="normalText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt optio
+        quisquam minima ipsam, soluta corrupti ullam beatae! Totam officiis
+        harum alias neque esse? Ipsam distinctio ullam, assumenda iusto
+        exercitationem excepturi!
+      </p>
+      <p class="normalText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt optio
+        quisquam minima ipsam, soluta corrupti ullam beatae! Totam officiis
+        harum alias neque esse? Ipsam distinctio ullam, assumenda iusto
+        exercitationem excepturi!
+      </p>
+      <p class="normalText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt optio
+        quisquam minima ipsam, soluta corrupti ullam beatae! Totam officiis
+        harum alias neque esse? Ipsam distinctio ullam, assumenda iusto
+        exercitationem excepturi!
+      </p>
+      <p class="normalText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt optio
+        quisquam minima ipsam, soluta corrupti ullam beatae! Totam officiis
+        harum alias neque esse? Ipsam distinctio ullam, assumenda iusto
+        exercitationem excepturi!
+      </p>
+      <p class="normalText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt optio
+        quisquam minima ipsam, soluta corrupti ullam beatae! Totam officiis
+        harum alias neque esse? Ipsam distinctio ullam, assumenda iusto
+        exercitationem excepturi!
+      </p>
+      <p class="normalText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt optio
+        quisquam minima ipsam, soluta corrupti ullam beatae! Totam officiis
+        harum alias neque esse? Ipsam distinctio ullam, assumenda iusto
+        exercitationem excepturi!
+      </p>
+      <p class="normalText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt optio
+        quisquam minima ipsam, soluta corrupti ullam beatae! Totam officiis
+        harum alias neque esse? Ipsam distinctio ullam, assumenda iusto
+        exercitationem excepturi!
+      </p>
+      <p class="normalText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt optio
+        quisquam minima ipsam, soluta corrupti ullam beatae! Totam officiis
+        harum alias neque esse? Ipsam distinctio ullam, assumenda iusto
+        exercitationem excepturi!
+      </p>
+      <p class="normalText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt optio
+        quisquam minima ipsam, soluta corrupti ullam beatae! Totam officiis
+        harum alias neque esse? Ipsam distinctio ullam, assumenda iusto
+        exercitationem excepturi!
+      </p>
+      <p class="normalText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt optio
+        quisquam minima ipsam, soluta corrupti ullam beatae! Totam officiis
+        harum alias neque esse? Ipsam distinctio ullam, assumenda iusto
+        exercitationem excepturi!
+      </p>
+      <p class="normalText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt optio
+        quisquam minima ipsam, soluta corrupti ullam beatae! Totam officiis
+        harum alias neque esse? Ipsam distinctio ullam, assumenda iusto
+        exercitationem excepturi!
+      </p>
+      <p class="normalText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt optio
+        quisquam minima ipsam, soluta corrupti ullam beatae! Totam officiis
+        harum alias neque esse? Ipsam distinctio ullam, assumenda iusto
+        exercitationem excepturi!
+      </p>
+      <p class="normalText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt optio
+        quisquam minima ipsam, soluta corrupti ullam beatae! Totam officiis
+        harum alias neque esse? Ipsam distinctio ullam, assumenda iusto
+        exercitationem excepturi!
+      </p>
+      <p class="normalText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt optio
+        quisquam minima ipsam, soluta corrupti ullam beatae! Totam officiis
+        harum alias neque esse? Ipsam distinctio ullam, assumenda iusto
+        exercitationem excepturi!
+      </p>
+      <p class="normalText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt optio
+        quisquam minima ipsam, soluta corrupti ullam beatae! Totam officiis
+        harum alias neque esse? Ipsam distinctio ullam, assumenda iusto
+        exercitationem excepturi!
+      </p>
+      <p class="normalText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt optio
+        quisquam minima ipsam, soluta corrupti ullam beatae! Totam officiis
+        harum alias neque esse? Ipsam distinctio ullam, assumenda iusto
+        exercitationem excepturi!
+      </p>
+      <p class="normalText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt optio
+        quisquam minima ipsam, soluta corrupti ullam beatae! Totam officiis
+        harum alias neque esse? Ipsam distinctio ullam, assumenda iusto
+        exercitationem excepturi!
+      </p>
+      <p class="normalText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt optio
+        quisquam minima ipsam, soluta corrupti ullam beatae! Totam officiis
+        harum alias neque esse? Ipsam distinctio ullam, assumenda iusto
+        exercitationem excepturi!
+      </p>
+      <p class="normalText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt optio
+        quisquam minima ipsam, soluta corrupti ullam beatae! Totam officiis
+        harum alias neque esse? Ipsam distinctio ullam, assumenda iusto
+        exercitationem excepturi!
+      </p>
+      <p class="normalText">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt optio
+        quisquam minima ipsam, soluta corrupti ullam beatae! Totam officiis
+        harum alias neque esse? Ipsam distinctio ullam, assumenda iusto
+        exercitationem excepturi!
+      </p>
+    </main>
+    <script type="module" src="/main"></script>
+  </body>
+</html>

@@ -1,0 +1,739 @@
+@font-face {
+  font-family: lustScript;
+  src: url(/static/fonts/lustscript/LustScript/LustScript.ttf);
+}
+
+@font-face {
+  font-family: palatino;
+  src: url(/static/fonts/lustscript/Palatino/Palatino.ttf);
+}
+
+@keyframes triangle {
+  0% {
+    top: 0;
+  }
+  60% {
+    top: 1rem;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.06);
+  }
+  95% {
+    transform: scale(0.98);
+  }
+  99% {
+    transform: scale(1.01);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.pulse {
+  animation-name: pulse;
+  animation-duration: 0.3s;
+  animation-iteration-count: 1;
+}
+
+.rotate {
+  animation: rotate;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+.rotate:hover {
+  -webkit-animation-play-state: running;
+  -moz-animation-play-state: running;
+  -o-animation-play-state: running;
+  animation-play-state: running;
+  cursor: pointer;
+}
+
+/*
+================ Password ================
+*/
+.passBarrier {
+  margin: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(30px);
+  position: fixed;
+  z-index: 1000;
+  background: rgba(178, 231, 231, 1);
+  color: rgb(7,31,47);
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: palatino;
+
+}
+
+.passContainer {
+  margin: 8rem auto;
+  max-width: 70vw;
+  width: 100%;
+  height: 100vw;
+  max-height: 100vw;
+}
+.passContainer > div {
+  text-align: center;
+}
+#passw {
+  width: 50vw;
+  max-width: 400px;
+  height: 2.7rem;
+  padding: 0.15rem;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  margin: 2.3rem auto;
+  display: block;
+  font-size: 2rem;
+  text-align: center;
+  background-color: rgba(38, 61, 61, 0.5);
+  color: rgb(7,31,47);
+  transition: 1s border-radius ease-in-out;
+}
+
+#passw:focus {
+  outline: none;
+  box-shadow: 0.3rem 0.3rem rgba(0, 0, 0, 0.09);
+  border-radius: 15px;
+}
+
+@font-face {
+  font-family: "bootstrap-icons";
+  src: url("/static/images/bootstrap-icons.woff") format("woff"),
+    url("/static/images/bootstrap-icons.woff2") format("woff2");
+}
+
+form i,
+#togglePassword {
+  margin: 0 10px;
+  cursor: pointer;
+  display: block;
+  position: relative;
+}
+
+[class^="bi-"]::before,
+[class*=" bi-"]::before {
+  display: inline-block;
+  font-family: bootstrap-icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: text-bottom;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bi-eye-fill::before {
+  content: "\f31e";
+}
+.bi-eye-slash-fill::before {
+  content: "\f31f";
+}
+.bi-eye-slash::before {
+  content: "\f320";
+  display: block;
+  width: 20px;
+  margin: auto;
+}
+.bi-eye::before {
+  content: "\f321";
+}
+
+#container {
+  display: none;
+}
+
+/*
+================ PROGRESS BAR ================
+source: https://raw.githubusercontent.com/loadingio/loading-bar/master/dist/loading-bar.css
+*/
+
+.ldBar {
+  position: relative;
+  margin: 3rem auto;
+}
+.ldBar.label-center > .ldBar-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-shadow: 0 0 3px #fff;
+}
+.ldBar-label:after {
+  content: "%";
+  display: inline;
+}
+.ldBar.no-percent .ldBar-label:after {
+  content: "";
+}
+rect.frame {
+  fill: none;
+}
+
+/*
+================ PAGE TOP ================
+*/
+
+.cover {
+  z-index: 10000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(178, 231, 231, 0.75);
+  backdrop-filter: blur(30px);
+  text-align: center;
+}
+.cover p {
+  font-family: palatino;
+  height: 30%;
+  color: rgb(17, 39, 39);
+  margin: 5rem auto auto;
+}
+
+.changeDevice {
+  display: none;
+}
+
+body.pointerOnObject {
+  cursor: pointer;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  min-height: 100vh;
+  max-width: 100vw;
+  z-index: -1;
+}
+body {
+  max-width: 100vw;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+main {
+  margin: 0 auto;
+  z-index: 10;
+  max-width: 600px;
+  width: 90vw;
+  padding: 2rem;
+  display: block;
+  transform: translateX(-15%);
+}
+main > *,
+main > * > * {
+  margin: 0 auto;
+}
+h1,
+#container > main > header > h2 {
+  user-select: none;
+}
+h1,
+h2 {
+  color: rgba(178, 231, 231, 0.74);
+  text-align: center;
+  letter-spacing: 1.7px;
+}
+h1 {
+  font-family: lustScript;
+
+  font-size: 6rem;
+  margin-bottom: 0;
+}
+h2 {
+  font-size: 3rem;
+  margin: 0 0 1rem 0;
+}
+#sanft {
+  font-size: 2rem;
+  text-align: center;
+  letter-spacing: 2.7px;
+  user-select: none;
+}
+
+#bewerbungsbild {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 3rem;
+  opacity: 50%;
+  transition: all 1s ease-in;
+  user-select: none;
+}
+#bewerbungsbild:hover {
+  opacity: 100%;
+}
+
+.triangle {
+  background-color: rgba(178, 231, 231, 0.74);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  width: 20px;
+  height: 35px;
+  position: relative;
+  top: 0;
+  animation-name: triangle;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  margin-bottom: 6rem;
+}
+
+#achievements {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  display: inline;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.527);
+  color: rgb(178, 231, 231);
+  border-radius: 7px;
+  padding: 0.5rem;
+}
+#achievements * {
+  display: inline;
+}
+#achievements hr {
+  display: block;
+  border: 1px solid rgb(178, 231, 231);
+}
+#achievements span {
+  display: block;
+  margin: 0.3rem;
+}
+#achievements .invisible,
+#restartGame.invisible {
+  display: none;
+}
+
+#achievements #congrats {
+  position: absolute;
+  transform: translate(-1rem, -1.5rem);
+  width: 3rem;
+  height: 3rem;
+  margin: 0 0 0 1rem;
+  z-index: 1;
+}
+
+#restartGame {
+  position: fixed;
+  top: 1rem;
+  right: 1.5rem;
+  width: 90px;
+  font-size: 1.4rem;
+  text-align: center;
+  color: rgba(178, 231, 231, 0.74);
+}
+img#restartSymbol {
+  content: url(/static/images/refresh.png);
+  opacity: 0.74;
+  width: 50px;
+  height: 50px;
+}
+
+.fastInfo {
+  text-align: center;
+  opacity: 0;
+  width: 100%;
+  margin-bottom: 3rem;
+  border-collapse: separate;
+}
+
+th{
+  font-size: 2rem;
+}
+
+td {
+  font-size: 1.4rem;
+  border-bottom: 3px solid transparent;
+  transition: border 0.5s ease-out;
+}
+td:last-child {
+  border-left: 3px solid transparent;
+  transition: border 0.5s ease-out;
+  text-align: left;
+}
+td:first-child {
+  border-right: 3px solid transparent;
+  transition: border 0.5s ease-out;
+  text-align: right;
+}
+
+tr:last-child > td {
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  transition: border 0.2s ease-in-out;
+}
+
+td:hover {
+  border-bottom: 3px solid rgba(178, 231, 231, 0.04);
+  cursor: pointer;
+}
+td:last-child:hover {
+  border-left: 3px solid rgba(178, 231, 231, 0.04);
+  cursor: pointer;
+}
+td:first-child:hover {
+  border-right: 3px solid rgba(178, 231, 231, 0.04);
+  cursor: pointer;
+}
+
+tr:last-child > td:hover {
+  border-top: 3px solid rgba(178, 231, 231, 0.04);
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+}
+
+th {
+  text-align: center;
+}
+tr {
+  height: 3rem;
+}
+td {
+  padding: 1rem;
+  width: 50%;
+  vertical-align: top;
+}
+
+#QandA > p > mark#secrets {
+  display: inline;
+  background-color: transparent;
+  color: rgba(178, 231, 231, 1);
+}
+
+#QandA > p > mark#secrets:hover {
+  cursor: help;
+}
+
+#QandA > p > a,
+#QandA > p > a:visited {
+  color: wheat;
+  text-decoration: none;
+}
+
+#QandA > p > a:hover {
+  color: whitesmoke;
+  text-decoration: underline;
+}
+
+/*
+ ================ The Timeline ================ 
+ original: https://codepen.io/NilsWe/pen/FemfK
+*/
+
+.timeline {
+  position: relative;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 1em 0;
+  list-style-type: none;
+}
+
+.timeline:before {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  content: " ";
+  display: block;
+  width: 6px;
+  height: 100%;
+  margin-left: -3px;
+  background: rgb(80, 80, 80);
+  background: -moz-linear-gradient(
+    top,
+    rgba(178, 231, 231, 0) 0%,
+    rgba(178, 231, 231, 0.74) 8%,
+    rgba(178, 231, 231, 1) 92%,
+    rgba(178, 231, 231, 0) 100%
+  );
+
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0%, rgba(30, 87, 153, 1)),
+    color-stop(100%, rgba(125, 185, 232, 1))
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(178, 231, 231, 0) 0%,
+    rgba(178, 231, 231, 0.74) 8%,
+    rgba(178, 231, 231, 1) 92%,
+    rgba(178, 231, 231, 0) 100%
+  );
+  background: -o-linear-gradient(
+    top,
+    rgba(178, 231, 231, 0) 0%,
+    rgba(178, 231, 231, 0.74) 8%,
+    rgba(178, 231, 231, 1) 92%,
+    rgba(178, 231, 231, 0) 100%
+  );
+  background: -ms-linear-gradient(
+    top,
+    rgba(178, 231, 231, 0) 0%,
+    rgba(178, 231, 231, 0.74) 8%,
+    rgba(178, 231, 231, 1) 92%,
+    rgba(178, 231, 231, 0) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(178, 231, 231, 0) 0%,
+    rgba(178, 231, 231, 0.74) 8%,
+    rgba(178, 231, 231, 1) 92%,
+    rgba(178, 231, 231, 0) 100%
+  );
+
+  z-index: 5;
+}
+
+.timeline li {
+  padding: 1em 0;
+}
+
+.timeline li:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.direction-l {
+  position: relative;
+  width: 300px;
+  float: left;
+  text-align: right;
+}
+
+.direction-r {
+  position: relative;
+  width: 300px;
+  float: right;
+}
+
+.flag-wrapper {
+  position: relative;
+  display: inline-block;
+
+  text-align: center;
+}
+
+.flag {
+  position: relative;
+  display: inline;
+  background: gba(255, 255, 255, 0.5);
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: 2px solid rgba(178, 231, 231, 1);
+  font-weight: 600;
+  text-align: left;
+  transition: all 0.5s ease-in;
+}
+
+.direction-l .flag {
+  -webkit-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15),
+    0 0 1px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+}
+
+.direction-r .flag {
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15),
+    0 0 1px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+}
+
+.direction-l,
+.direction-r {
+  transition: transform 0.5s ease-in;
+}
+.direction-l:hover,
+.direction-r:hover {
+  transform: translateY(-5px);
+}
+
+.direction-r:hover > div > .flag,
+.direction-l:hover > div > .flag {
+  background-color: rgba(0, 0, 0, 0.267);
+}
+
+.direction-l .flag:before,
+.direction-r .flag:before {
+  position: absolute;
+  top: 50%;
+  right: -40px;
+  content: " ";
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin-top: -10px;
+  background: transparent;
+  border-radius: 10px;
+  border: 4px solid rgba(178, 231, 231, 1);
+  z-index: 10;
+}
+
+.direction-r .flag:before {
+  left: -40px;
+}
+
+.direction-l .flag:after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  height: 0;
+  width: 0;
+  margin-top: -8px;
+  border: solid transparent;
+  border-left-color: rgba(178, 231, 231, 1);
+  border-width: 8px;
+  pointer-events: none;
+}
+
+.direction-r .flag:after {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  height: 0;
+  width: 0;
+  margin-top: -8px;
+  border: solid transparent;
+  border-right-color: rgba(178, 231, 231, 1);
+  border-width: 8px;
+  pointer-events: none;
+}
+
+.time-wrapper {
+  display: inline;
+
+  line-height: 1em;
+  font-size: 0.66666em;
+  color: #fff;
+  vertical-align: middle;
+}
+
+.direction-l .time-wrapper {
+  float: left;
+}
+
+.direction-r .time-wrapper {
+  float: right;
+}
+
+.time {
+  display: inline-block;
+  padding: 4px 6px;
+  background: rgba(0, 0, 0, 0.548);
+}
+
+.desc {
+  margin: 1em 0.75em 0 0;
+
+  font-size: 1.1rem;
+  font-style: italic;
+  line-height: 1.5em;
+}
+
+.direction-r .desc {
+  margin: 1em 0 0 0.75em;
+}
+
+main,
+p {
+  font-size: 1.3rem;
+  color: rgba(178, 231, 231, 1);
+  font-family: palatino;
+}
+p {
+  margin-bottom: 0.6rem;
+}
+
+#QandA p{
+  margin-bottom: 2rem;
+}
+
+/*
+==== SCROLLBAR =====
+*/
+
+body::-webkit-scrollbar {
+  position: absolute;
+  width: 6px; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  width: 16px; /* width of the entire scrollbar */
+  background: url(/static/3Dmodels/FantasySky/textures/Material__25__background_JPG_002_emissive.jpg);
+  backdrop-filter: blur(30px);
+}
+
+body::-webkit-scrollbar-thumb {
+  width: 9px;
+  background-color: rgba(255, 254, 254, 0.329); /* color of the scroll thumb */
+  border-radius: 20px; /* roundness of the scroll thumb */
+}
+
+@media (pointer: coarse) {
+  .changeDevice {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    width: 100vw;
+    height: 100vw;
+    background: rgba(178, 231, 231, 1);
+  }
+  .changeDevice>p{
+    margin: 8rem auto;
+    max-width: 70vw;
+    width: 100%;
+    height: 100vw;
+    max-height: 100vw;
+    color: rgb(7,31,47);
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: palatino;
+    text-align: center;
+  }
+}

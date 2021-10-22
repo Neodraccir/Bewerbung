@@ -1,0 +1,76 @@
+{
+  "successfullLoad": "true",
+  "animation": "moveLightInCircle(pointLight);moveBalls(ballArray, ballProp);if (allFairesLoaded) moveBalls(fairyArray, fairyProp, true);smoothCamMouseMove(camera);circleSkyAround(skyWorld);let scrollState = Math.abs(document.body.getBoundingClientRect().top);let blurPixel = scrollState <= 8 ? 0 : 30 - 30 / (Math.sqrt(scrollState) * 0.1);document.querySelectorAll('.main').forEach((main) => (main.style.backdropFilter = `blur(${blurPixel}px)`));if (chest) moveChest(chest);render();requestAnimationFrame(animate);",
+  "content": {
+    "title": "Bewerbung",
+    "name": ["Riccardo", "Neutag"],
+    "birthday": "07.01.1994",
+    "skills": [
+      "Javascript",
+      "NodeJS",
+      "React",
+      "Svelte",
+      "CSS",
+      "HTML",
+      "Express",
+      "ThreeJS",
+      "Wordpress",
+      "Photshop",
+      "After Effects",
+      "Premiere Pro"
+    ],
+    "exp": ["Bald 2 Jahre", "Selbsttraining"],
+    "timeline": [
+      {
+        "time": "2013",
+        "title": "Abitur",
+        "text": "Mein Abitur habe ich an der Erich-Fried-Gesamtschule mit einem Abschluss von 2,0 gemacht."
+      },
+      {
+        "time": "2013-2014",
+        "title": "Bergische Uni",
+        "text": "Für kurze Zeit habe ich Medien Design an der Bergischen Universität in Wuppertal studiert. Meine Fragen an Gott und die Welt haben mich zu einem Studiumswechsel bewegt."
+      },
+      {
+        "time": "2015-2018",
+        "title": "I G W",
+        "text": "Am Institut für Gemeindebau und Weltmission in Essen habe ich einen Bachelor of Arts in Theologie - sowie ein dreijähriges Praktikum in der Credo Kirche absolviert."
+      },
+      {
+        "time": "Seit 2019",
+        "title": "Appen Inc",
+        "text": "Seit 2019 arbeite ich als Search Engine Evaluator selbständig bei Appen Inc. Meine Aufgabe besteht darin, Such- und Übersetzungsalgorythmen zu verbessern."
+      },
+      {
+        "time": "Seit 2019",
+        "title": "Selbststudium",
+        "text": "Ebenfalls seit 2019 bringe ich mir selbst das Programmieren bei."
+      },
+      {
+        "time": "Bald",
+        "title": "Developer",
+        "text": "Ich strebe einen baldigen Verdienst als selbstständiger Programmierer an."
+      }
+    ],
+    "QandA": [
+      [
+        "Was macht mich aus?",
+        "Ich liebe es, Neues zu lernen und lerne am besten autodidaktisch. Das heißt, ich bringe mir Dinge recht schnell selber bei. So habe ich mir zum Beispiel extra für diese Bewerbung beigebracht, das ThreeJS-Modul zu verwenden. Das Ergebnis ist diese Bewerbung, die 3D-Effekte und die <mark id='secrets'>kleinen Geheimnisse</mark>, die man hier lüften kann. Den Code können Sie <a href='#'>hier</a> nachsehen."
+      ],
+      [
+        "Wie bin ich zum Programmieren gekommen?",
+        "Nach meinem Bachelor-Abschluss in Theologie wollte ich mich in den Geisteswissenschaften weiterbilden. Währenddessen lernte ich in meiner Freizeit über eine App zum Zeitvertreib JavaScript. Das hat mir so viel Freude bereitet, dass ich alle Pläne über Board warf, um programmieren zu lernen."
+      ],
+      [
+        "Was habe ich ZacherMedia zu bieten?",
+        "Seit ich 12 bin, schneide und bearbeite ich Videos sowie Bilder. Ich bin auch in der Lage, Animationen, 3D Szenen und Logos zu entwerfen. Ich habe bereits Premiere Pro, Sony Vegas, Kdenlive, Photoshop, GIMP, Illustrator, Audacity und ein wenig Blender benutzt. Diese Tools setzte ich auch in den drei Jahren meines dualen Studiums regelmäßig ein. Auch habe ich mich mit grundlegenden Theorien des Designs beschäftigt. <br />Des Weiteren sind meine Englischkenntnisse sind sehr gut. Schließlich besteht ein Teil meines aktuellen Jobs aus dem Übersetzen von Texten. Ich spreche es fließend und gerne. Zu diesen Fähigkeiten ist nun das Programmieren hinzu gekommen."
+      ],
+      ["Welche Programmierkenntnisse bringe ich mit?",
+      "Ich beherrsche Front-End-Kenntnisse mit HTML, CSS, Vanilla Java-Script, sowie auch erste Kenntnisse in React und Svelte. Im Back-End habe ich vorallem NodeJS mit Express verwendet. Wenn ich in Wordpress allerdings PHP bearbeiten musste, konnte ich recht schnell mein Wissen auf die Sprache ummüntzen.  Außerdem habe ich auch schon ein wenig mit MongoDB gearbeitet und verstehe grob die Prinzipen von Datenbanken. Für Codebase und Codetracking habe ich micht Git bzw. Github vertraut gemacht (Hier meine Repos). Das macht mich zu einem Full-Stack-Developer im weitesten Sinne."],
+      [
+        "Was brauche ich?",
+        "Mein Ziel ist es, in den nächsten Monaten, meine aktuelle Nebentätigkeit durch einen oder mehrere IT-Jobs zu ersetzen. Ich wünsche mir einen Remote-Job, da ich im Bergischen Land wohne. Meetings vorort und andere Veranstaltungen wären natürlich trotzdem möglich."
+      ]
+    ]
+  }
+}

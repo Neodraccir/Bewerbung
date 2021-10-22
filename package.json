@@ -1,0 +1,17 @@
+{
+  "name": "bewerbungzachermedia",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^2.5.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "serve-favicon": "^2.5.0",
+    "three": "^0.132.2"
+  }
+}
