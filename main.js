@@ -1,3 +1,4 @@
+//Stop people from using no desktop devices
 let is_coarse = matchMedia("(pointer:coarse)").matches;
 if (is_coarse) {
   window.ajaxEnabled = false;
@@ -242,8 +243,8 @@ function getPassLength() {
   return passLengthXML.responseText;
 }
 async function passingit() {
-  let lenget = await getPassLength();
-  console.log(await lenget);
+  let length = await getPassLength();
+  console.log(await length);
 }
 
 passingit();
