@@ -738,4 +738,8 @@ body::-webkit-scrollbar-thumb {
     font-family: palatino;
     text-align: center;
   }
+
+  .passContainer{
+    opacity: 0;
+  }
 }
