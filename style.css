@@ -719,10 +719,12 @@ body::-webkit-scrollbar-thumb {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 10000;
+    right: 0;
+    bottom: 0;
+    z-index: 50000;
     width: 100vw;
     height: 100vw;
-    background: rgba(178, 231, 231, 1);
+    background: rgb(178, 231, 231);
   }
   .changeDevice>p{
     margin: 8rem auto;
@@ -731,7 +733,7 @@ body::-webkit-scrollbar-thumb {
     height: 100vw;
     max-height: 100vw;
     color: rgb(7,31,47);
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
     font-family: palatino;
     text-align: center;

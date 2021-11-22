@@ -40,8 +40,6 @@ var loadProgress = 0;
               document.querySelector("#achievements").style.opacity = 0;
             let cover = document.querySelector(".cover");
             let changer = document.querySelector(".changeDevice");
-            let passContainer = document.querySelector(".passContainer");
-            if (passContainer) passContainer.remove();
             if (cover) cover.remove();
             if (changer) changer.remove();
             if (divPassBarrier) divPassBarrier.remove();
