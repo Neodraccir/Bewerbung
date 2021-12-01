@@ -8,6 +8,17 @@ if (is_coarse) {
   throw new Error("Incompatible device! Please use a different device.");
 }
 
+//play video on mouseover
+
+const profileVid = document.querySelector("#bewerbungsbild");
+profileVid.pause();
+profileVid.onmouseenter = function () {
+  profileVid.play();
+};
+profileVid.onmouseleave = function () {
+  profileVid.pause();
+};
+
 //three modules
 import * as THREE from "/modules/three/build/three.module.js";
 var bar = new ldBar("#progressbar");
