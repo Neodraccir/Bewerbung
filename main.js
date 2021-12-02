@@ -132,8 +132,8 @@ document.addEventListener("createdAllFairies", (e) => {
   fairyArray = e.detail.fairyArray;
   fairyProp = e.detail.fairyProp;
   allFairesLoaded = true;
-  console.log(allFairesLoaded);
-  console.log(fairyArray, fairyProp);
+  // console.log(allFairesLoaded);
+  // console.log(fairyArray, fairyProp);
 });
 
 buildManyFairies(scene);
@@ -210,20 +210,20 @@ document.addEventListener("mysteryEvent", (event) => {
     document.querySelector("#achievements").style.opacity = 1;
   }
 
-  console.log(event.detail);
+  // console.log(event.detail);
   showSolvedMysteries();
 });
 
 document.addEventListener("restartGame", () => {
-  console.log("And here we go again!");
+  // console.log("And here we go again!");
   document.querySelector("#restartGame").classList.add("invisible");
   let achievementStyle = document.querySelector("#achievements").style;
-  console.log("restartGame");
+  // console.log("restartGame");
   window.scrollTo(0, 0);
   achievementStyle.opacity = 0;
   currentState = 0;
   document.querySelector("#solvedMysteries").innerHTML = currentState;
-  console.log(achievementStyle.opacity);
+  // console.log(achievementStyle.opacity);
   sessionStorage.clear();
   notPlayingYet = true;
   sessionStorage.setItem("notPlayingYet", notPlayingYet);
@@ -238,12 +238,12 @@ document.addEventListener("restartGame", () => {
   });
   scene.traverse((obj) => {
     if (/fairy/gi.test(obj.name) && obj.type == "SkinnedMesh") {
-      console.log(obj);
+      // console.log(obj);
       obj.material.color.setRGB(255, 255, 255);
     }
   });
   showSolvedMysteries();
-  console.log(solvedMysteries);
+  // console.log(solvedMysteries);
 });
 
 //Hier muss eine Async Version entstehen
@@ -255,7 +255,7 @@ function getPassLength() {
 }
 async function passingit() {
   let length = await getPassLength();
-  console.log(await length);
+  // console.log(await length);
 }
 
 passingit();
@@ -286,7 +286,7 @@ function sendPassword(password) {
     if (xhr.readyState == 4 && xhr.status == 200) {
       if (JSON.parse(xhr.response).successfullLoad == "true") {
         var animation = JSON.parse(xhr.response).animation;
-        console.log(animation);
+        // console.log(animation);
         animate = function () {
           eval(animation);
         };
@@ -303,14 +303,14 @@ function sendPassword(password) {
           document.dispatchEvent(restartGame);
       }
       if (JSON.parse(xhr.response).successfullLoad == false) {
-        console.log("neeeey");
+        // console.log("neeeey");
       }
     }
   };
 }
 let input = document.querySelector("#passw");
 input.onkeyup = () => {
-  console.log(input.value.length);
+  // console.log(input.value.length);
   if (input.value.length >= 3) {
     sendPassword(false);
   }
