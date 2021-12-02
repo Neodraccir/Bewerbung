@@ -21,7 +21,7 @@ async function loadFairy(src, scene, id) {
       document.dispatchEvent(namedFairy);
     },
     function onLoaded(xhr) {
-      console.log(
+      //console.log(
         (xhr.loaded / xhr.total) * 100 + "% of fairy" + id + " loaded"
       );
       document.addEventListener("namedFairy" + id, () => {

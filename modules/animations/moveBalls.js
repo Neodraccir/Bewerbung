@@ -1,6 +1,6 @@
 function moveBalls(ballArray, ballProp, y) {
   // if(y){
-  //     console.log(ballArray[3].position.x)
+  //     //console.log(ballArray[3].position.x)
   // }
   ballArray.forEach((ball, index) => {
     let bp = ball.position;

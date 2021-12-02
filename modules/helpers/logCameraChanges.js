@@ -37,7 +37,7 @@ function logCameraChanges(camera, newCam) {
 
   let logIfEqual = (equal) => {
     if (!equal) {
-      console.log(`Current Position of Camera "${newCam.name}":`, cameraPosAfter);
+      //console.log(`Current Position of Camera "${newCam.name}":`, cameraPosAfter);
       cameraPosBefore = cameraPosAfter;
     }
   };

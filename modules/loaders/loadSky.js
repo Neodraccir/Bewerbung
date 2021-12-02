@@ -31,7 +31,7 @@ async function loadSky(src, scene) {
       document.dispatchEvent(finishedLoading);
     },
     function (xhr) {
-      console.log((xhr.loaded / xhr.total) * 100 + "% of Sky loaded");
+      //console.log((xhr.loaded / xhr.total) * 100 + "% of Sky loaded");
     },
     function (error) {
       console.error(error);

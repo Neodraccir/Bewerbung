@@ -28,9 +28,9 @@ const mysteryEvents = {
 var chestClick = 0;
 
 document.addEventListener("removedPassBarrier", ()=>{
-  console.log("remoooovedddd")
+  //console.log("remoooovedddd")
   function highlightSecretBox() {
-    console.log("addClaaaasssy")
+    //console.log("addClaaaasssy")
     document.querySelector("#achievements").classList.add("pulse");
     setTimeout(
       () => document.querySelector("#achievements").classList.remove("pulse"),
@@ -64,7 +64,7 @@ function onPointerDown(event) {
           if (value < 1.001) return ["z", Math.random() / 3];
         },
         c = () => Math.random();
-      console.log(object);
+      //console.log(object);
       object.material.color.setRGB(c(), c(), c());
 
       let d1 = randomDirection();
@@ -122,11 +122,11 @@ function onPointerDown(event) {
         sounds[0].play();
       }
       if (chestClick > 1) sounds[0].play();
-      console.log(chestClick);
+      //console.log(chestClick);
       chestClick++;
 
       object.traverse(function (node) {
-        console.log(object);
+        //console.log(object);
         node.bloomMode = true;
         node.layers.toggle(BLOOM_SCENE);
         setTimeout(() => node.layers.toggle(BLOOM_SCENE), 100);

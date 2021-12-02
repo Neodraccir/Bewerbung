@@ -75,8 +75,8 @@ async function buildManyFairies(scene) {
       });
 
       if (id + 1 == amountOfFairies) {
-        console.log("creating event...", i);
-        console.log(finishedCreating);
+        //console.log("creating event...", i);
+        //console.log(finishedCreating);
         document.dispatchEvent(finishedCreating);
       }
     });

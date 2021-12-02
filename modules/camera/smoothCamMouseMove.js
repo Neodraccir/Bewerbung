@@ -49,7 +49,7 @@ function getMouseCoordinates(event) {
         scrollstate != targetScrollstate;
 
       if (!thereIsADifference) {
-        // console.log("THE SAME");
+        // //console.log("THE SAME");
         changeValue = startValue;
         mouseCoordinates = targetMouseCoordinates;
         scrollstate = targetScrollstate;
