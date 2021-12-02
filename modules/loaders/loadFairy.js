@@ -22,8 +22,8 @@ async function loadFairy(src, scene, id) {
     },
     function onLoaded(xhr) {
       //console.log(
-        (xhr.loaded / xhr.total) * 100 + "% of fairy" + id + " loaded"
-      );
+      //   (xhr.loaded / xhr.total) * 100 + "% of fairy" + id + " loaded"
+      // );
       document.addEventListener("namedFairy" + id, () => {
         let fairy = scene.getObjectByName("fairy" + id);
         let size = Math.random();
