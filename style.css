@@ -287,18 +287,18 @@ h2 {
 
 .videoContainer {
   overflow: hidden;
-  width: 500px;
+  width: 350px;
   border-radius: 10px;
   display: flex;
   justify-content: center;
-  max-height: 563px;
-  height: 563px;
+  max-height: 283px;
+  height: 283px;
 
 }
 
 #bewerbungsbild {
   opacity: 90%;
-  width: 1000px;
+  width: 700px;
   border-radius: 8px;
   display: block;
   margin: 0 auto;
@@ -707,10 +707,12 @@ p {
 
 #Certificates > p > ul.cert > li {
   list-style: none;
+  margin-bottom: 1rem;
 }
 
 #Certificates > p > ul.cert > li > a {
   color: rgba(178, 231, 231, 1);
+  text-decoration: none;
 }
 
 #Certificates > p > ul.cert > li > a:visted {
@@ -719,6 +721,7 @@ p {
 
 #Certificates > p > ul.cert > li > a:hover {
   color: rgba(178, 231, 231, 1);
+  text-decoration: underline;
 }
 
 img.cert {
