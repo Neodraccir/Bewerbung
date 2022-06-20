@@ -15,7 +15,6 @@ let chestMaterial = new THREE.MeshLambertMaterial({
   // vertexShader: _VS,
   // fragmentShader: _FS,
   depthTest: true,
-  needsUpdate: true,
 });
 
 export { chestMaterial, chestTexture };

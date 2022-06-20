@@ -101,7 +101,7 @@
 .passContainer > div {
   text-align: center;
 }
-#passw {
+#passw,#companyName {
   width: 50vw;
   max-width: 400px;
   height: 2.7rem;
@@ -117,10 +117,23 @@
   transition: 1s border-radius ease-in-out;
 }
 
-#passw:focus {
+#passw:focus, #companyName:focus {
   outline: none;
   box-shadow: 0.3rem 0.3rem rgba(0, 0, 0, 0.09);
   border-radius: 15px;
+}
+
+.insertCompanyName{
+  display: inline-block;
+}
+
+#companyLogo{
+  display: none;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  max-height: 5rem;
+  max-widht: 10rem;
 }
 
 @font-face {

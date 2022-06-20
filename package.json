@@ -12,6 +12,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "serve-favicon": "^2.5.0",
+    "string-similarity": "^4.0.4",
     "three": "^0.132.2"
   }
 }

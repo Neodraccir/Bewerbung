@@ -21,8 +21,11 @@
       </p>
     </div>
     <div class="passContainer">
-      <div>
-        Um die Bewerbung für ZacherMedia zu sehen,<br />geben Sie das Passwort ein:
+      <div>Name Ihres Unternehmens:</div>
+      <input name="company" id="companyName" type="text" maxlength="35"></input>
+      <div id="companyIsKnown">
+        Um die Bewerbung<div class="insertCompanyName"></div> zu sehen,<br />geben Sie das Passwort ein:
+        <img id="companyLogo" src="/path/to/logo" />
       </div>
       <input type="password" name="password" id="passw" />
       <i class="bi bi-eye-slash" id="togglePassword"></i>
@@ -31,7 +34,7 @@
   <div id="container">
     <div class="cover">
       <div class="loader">
-        <p>Die Bewerbung für ZacherMedia wird geladen...</p>
+        <p>Die Bewerbung<div class="insertCompanyName"></div>  wird geladen...</p>
         <div id="progressbar" class="ldBar" data-value="0" data-preset="bubble" data-pattern-size="64"
           data-fill="/static/loader/Cloud-33.3s-1084px.svg" style="width: 200px; height: 200px"></div>
       </div>

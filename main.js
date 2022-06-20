@@ -247,17 +247,43 @@ document.addEventListener("restartGame", () => {
 });
 
 //Hier muss eine Async Version entstehen
+
 function getPassLength() {
   let passLengthXML = new XMLHttpRequest();
-  passLengthXML.open("GET", "passLength");
+  let companyName = document.querySelector("#companyName").value;
+  passLengthXML.open("GET", "passLengthFor" + companyName);
   passLengthXML.send();
-  return passLengthXML.responseText;
+  passLengthXML.onreadystatechange = function () {
+    if (passLengthXML.readyState == 4 && passLengthXML.status == 200) {
+      let companyLogo = document.querySelector("#companyLogo");
+      let insertCompanyName = document.querySelectorAll(".insertCompanyName");
+      //ADD HERE: mehr als nur länge. Auch Firmenname muss zurückgegeben werden
+      let response = JSON.parse(passLengthXML.response);
+      if (response.n != undefined) {
+        companyLogo.style.display = "block";
+        companyLogo.src = "/cimg/" + response.n + ".png";
+        insertCompanyName.forEach((e)=>e.innerHTML = `&nbsp;für ${response.n}`);
+        passLength = response.l;
+        localStorage.setItem("companyName", response.n)
+        if(response.l == document.querySelector("#passw").value.length){
+          sendPassword();
+        }
+      }
+
+      if (response.n == null || response.n == undefined) {
+        companyLogo.style.display = "none";
+        insertCompanyName.forEach((e)=>e.innerHTML = "");
+        passLength = 1000;
+      }
+    }
+  };
 }
 async function passingit() {
   let length = await getPassLength();
   // console.log(await length);
 }
 
+//ADD HERE: Pass length muss updaten, wenn Firmenname eingegeben wird
 passingit();
 
 const togglePassword = document.querySelector("#togglePassword");
@@ -278,7 +304,8 @@ password.focus();
 
 function sendPassword(password) {
   let xhr = new XMLHttpRequest();
-  xhr.open("POST", "sendPass");
+  let companyName = document.querySelector("#companyName").value;
+  xhr.open("POST", "sendPassFor" + companyName);
   xhr.setRequestHeader("Content-Type", "application/json");
   let pass = password ? password : document.querySelector("#passw").value;
   xhr.send(JSON.stringify({ pass: pass }));
@@ -309,12 +336,25 @@ function sendPassword(password) {
   };
 }
 let input = document.querySelector("#passw");
+let nameInput = document.querySelector("#companyName");
+let passLength = 1000;
+
+nameInput.onkeyup = () => getPassLength();
+
 input.onkeyup = () => {
-  // console.log(input.value.length);
-  if (input.value.length >= 3) {
+  if (input.value.length >= passLength) {
     sendPassword(false);
   }
 };
+
+if (location.pathname.slice(0, 2) == "/_") {
+  document.querySelector("#companyName").value = decodeURI(location.pathname.slice(2));
+  getPassLength();
+}else if(localStorage.getItem("companyName") ? true : false){
+  document.querySelector("#companyName").value = localStorage.getItem("companyName");
+  getPassLength();
+}
+
 if (localStorage.getItem("pass") ? true : false)
   sendPassword(localStorage.getItem("pass"));
 
