@@ -308,6 +308,7 @@ function sendPassword(password) {
   xhr.open("POST", "sendPassFor" + companyName);
   xhr.setRequestHeader("Content-Type", "application/json");
   let pass = password ? password : document.querySelector("#passw").value;
+
   xhr.send(JSON.stringify({ pass: pass }));
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4 && xhr.status == 200) {
@@ -330,7 +331,6 @@ function sendPassword(password) {
           document.dispatchEvent(restartGame);
       }
       if (JSON.parse(xhr.response).successfullLoad == false) {
-        // console.log("neeeey");
       }
     }
   };
@@ -354,6 +354,9 @@ if (location.pathname.slice(0, 2) == "/_") {
   document.querySelector("#companyName").value = localStorage.getItem("companyName");
   getPassLength();
 }
+
+if (localStorage.getItem("companyName") ? true : false)
+  getPassLength();
 
 if (localStorage.getItem("pass") ? true : false)
   sendPassword(localStorage.getItem("pass"));
